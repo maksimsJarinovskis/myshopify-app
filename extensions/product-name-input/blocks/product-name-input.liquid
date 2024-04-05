@@ -1,7 +1,9 @@
-<form>
+<form id="change-product-name">
   <input type="text" name="product_name" placeholder="New product name"/>
-  <button type="submit">Change!</button>
+  <input type="hidden" name="product_id" value="{{product.id}}">
+  <button type="submit">Change!!</button>
 </form>
+<script src="{{ 'changeProductName.js' | asset_url }}" defer="defer" type="module"></script>
 
 {% schema %}
 {

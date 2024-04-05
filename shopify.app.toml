@@ -3,7 +3,7 @@
 client_id = "c7539a17d4166e70d7351fcbcc17fad6"
 name = "task6"
 handle = "task6"
-application_url = "https://powder-welsh-costumes-requiring.trycloudflare.com"
+application_url = "https://lots-include-compare-logos.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://powder-welsh-costumes-requiring.trycloudflare.com/auth/callback",
-  "https://powder-welsh-costumes-requiring.trycloudflare.com/auth/shopify/callback",
-  "https://powder-welsh-costumes-requiring.trycloudflare.com/api/auth/callback"
+  "https://lots-include-compare-logos.trycloudflare.com/auth/callback",
+  "https://lots-include-compare-logos.trycloudflare.com/auth/shopify/callback",
+  "https://lots-include-compare-logos.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
