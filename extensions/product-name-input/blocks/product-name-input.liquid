@@ -1,0 +1,15 @@
+<form>
+  <input type="text" name="product_name" placeholder="New product name"/>
+  <button type="submit">Change!</button>
+</form>
+
+{% schema %}
+{
+  "name": "Change product input",
+  "target": "section",
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}
+
