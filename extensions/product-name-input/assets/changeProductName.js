@@ -15,7 +15,6 @@ form.addEventListener("submit", async (event) => {
     const query = {
       query: `mutation { productUpdate(input: {id: \"gid://shopify/Product/${productId}\", title: \"${newTitle}\"}) { product { id, title } } }`
     }
-    console.log(JSON.stringify(query));
 
     const response = await fetch(requestUrl, {
       method: 'POST',
