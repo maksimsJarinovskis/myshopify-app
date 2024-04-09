@@ -2,16 +2,7 @@ import { useEffect } from "react";
 import { json } from "@remix-run/node";
 import { useActionData, useNavigation, useSubmit } from "@remix-run/react";
 import {
-  Page,
-  Layout,
-  Text,
-  Card,
-  Button,
-  BlockStack,
-  Box,
-  List,
-  Link,
-  InlineStack,
+  Page
 } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 
@@ -29,12 +20,7 @@ export const action = async ({request}) => {
   const requestJson = await request.json();
   const secretKey = requestJson.secret_key;
   if (secretKey) {
-    //query {
-    //   currentAppInstallation {
-    //     id
-    //   }
-    // }
-    const appInstalationQuery = await admin.graphql(
+    const appInstallationQuery = await admin.graphql(
   `#graphql
         query {
           currentAppInstallation {
@@ -42,10 +28,10 @@ export const action = async ({request}) => {
           }
         }`
     );
-    const appInstalationJson = await appInstalationQuery.json();
-    const appInstalationId = appInstalationJson?.data?.currentAppInstallation?.id;
-    console.log(appInstalationId);
-    if (appInstalationId) {
+    const appInstallationJson = await appInstallationQuery.json();
+    const appInstallationId = appInstallationJson?.data?.currentAppInstallation?.id;
+    console.log(appInstallationId);
+    if (appInstallationId) {
       const response = await admin.graphql(
           `#graphql
         mutation CreateAppDataMetafield($metafieldsSetInput: [MetafieldsSetInput!]!) {
@@ -69,7 +55,7 @@ export const action = async ({request}) => {
                 "key": "facebook_api_key",
                 "type": "single_line_text_field",
                 "value": secretKey,
-                "ownerId": appInstalationId
+                "ownerId": appInstallationId
               }
             ]
           }
@@ -77,7 +63,6 @@ export const action = async ({request}) => {
       );
       const responseJson = await response.json();
 
-      console.log(responseJson.data.metafieldsSet.metafields[0]);
       return json({
         metafield: responseJson.data?.metafieldsSet?.metafields[0]
       });
