@@ -14,9 +14,6 @@ export const loader = async ({ request }) => {
 
 export const action = async ({request}) => {
   const { admin } = await authenticate.admin(request);
-  const color = ["Red", "Orange", "Yellow", "Green"][
-    Math.floor(Math.random() * 4)
-  ];
   const requestJson = await request.json();
   const secretKey = requestJson.secret_key;
   if (secretKey) {
