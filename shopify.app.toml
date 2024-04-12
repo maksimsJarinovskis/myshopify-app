@@ -3,7 +3,7 @@
 client_id = "c7539a17d4166e70d7351fcbcc17fad6"
 name = "task6"
 handle = "task6"
-application_url = "https://lots-include-compare-logos.trycloudflare.com"
+application_url = "https://mcdonald-harder-author-knowledgestorm.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_content,write_products"
 
 [auth]
 redirect_urls = [
-  "https://lots-include-compare-logos.trycloudflare.com/auth/callback",
-  "https://lots-include-compare-logos.trycloudflare.com/auth/shopify/callback",
-  "https://lots-include-compare-logos.trycloudflare.com/api/auth/callback"
+  "https://mcdonald-harder-author-knowledgestorm.trycloudflare.com/auth/callback",
+  "https://mcdonald-harder-author-knowledgestorm.trycloudflare.com/auth/shopify/callback",
+  "https://mcdonald-harder-author-knowledgestorm.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
